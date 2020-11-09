@@ -4,7 +4,7 @@
 	<p-dropdown [options]="repeats" [(ngModel)]="selectedCity1" optionLabel="name" [showClear]="true"
 		formControlName="selectedCity"></p-dropdown>
 
-	{{selectedCity1?.code |json}}
+	<!-- {{selectedCity1?.code |json}} -->
 
 	<ng-template [ngIf]="selectedCity1?.code ==0">
 		its daily
