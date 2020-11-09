@@ -1,0 +1,30 @@
+<form [formGroup]="dropdownForm" (ngSubmit)="onSubmit()">
+
+	<h5>Single</h5>
+	<p-dropdown [options]="repeats" [(ngModel)]="selectedCity1" optionLabel="name" [showClear]="true"
+		formControlName="selectedCity"></p-dropdown>
+
+	{{selectedCity1?.code |json}}
+
+	<ng-template [ngIf]="selectedCity1?.code ==0">
+		its daily
+	</ng-template>
+
+	<ng-template [ngIf]="selectedCity1?.code==1">
+		<div class="col-md-1 p-2" *ngFor="let days of weekdays">
+			<input type="checkbox" formControlName="selected_days" (click)="addAlias()">{{days.name}}
+		</div>
+	</ng-template>
+
+	<ng-template [ngIf]="selectedCity1?.code==2">
+		its monthly
+	</ng-template>
+
+	<ng-template [ngIf]="selectedCity1?.code==3">
+		<div> its yearly</div>
+	</ng-template>
+
+	<br>
+	<button type = "submit" >ok</button>
+
+</form>
