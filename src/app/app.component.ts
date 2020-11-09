@@ -44,14 +44,8 @@ export class AppComponent {
 
   dropdownForm = this.fb.group({
     selectedCity: ["Daily"],
-    selected_days: this.fb.array([
-    this.fb.control('')
-  ])
+    selected_days: [this.weekdays]
   });
-
-  addAlias() {
-  this.selected_days.push(this.fb.control(''));
-}
 
   onSubmit() {
     console.log(this.dropdownForm.value);

@@ -12,7 +12,7 @@
 
 	<ng-template [ngIf]="selectedCity1?.code==1">
 		<div class="col-md-1 p-2" *ngFor="let days of weekdays">
-			<input type="checkbox" formControlName="selected_days" (click)="addAlias()">{{days.name}}
+			<input type="checkbox" formControlName="selected_days">{{days.name}}
 		</div>
 	</ng-template>
 
